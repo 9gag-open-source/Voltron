@@ -41,8 +41,6 @@
     if (![cell isKindOfClass:[WMLCollectionViewCell class]]) {
         return;
     }
-    UIViewController *controller = cell.contentViewController;
-    [self _unhostViewController:controller];
 }
 
 #pragma mark - Private
@@ -55,6 +53,7 @@
 
 - (void)_hostViewController:(UIViewController *)controller
                withHostView:(UIView *)superview {
+    [self _unhostViewController:controller];
     [self.containerViewController addChildViewController:controller];
     controller.view.frame = superview.bounds;
     controller.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
