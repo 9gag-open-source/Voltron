@@ -26,5 +26,6 @@
 @property (nonatomic, weak) IBOutlet UIViewController *containerViewController;
 
 - (void)didEndDisplayingCell:(UICollectionViewCell *)cell;
+- (void)willDisplayingCell:(UICollectionViewCell *)cell;
 
 @end
